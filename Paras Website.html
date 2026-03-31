@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paraskumar Chaudhari | IT Coordinator & Programmer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header/Navigation */
+        nav {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            position: sticky;
+            top: 0;
+            background: rgba(10,10,10,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 100;
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #e5e5e5;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 5rem 0 4rem;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #fff, #60a5fa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-text .title {
+            font-size: 1.25rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .hero-text .description {
+            color: #9ca3af;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .info-item i {
+            color: #60a5fa;
+            width: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-links a {
+            color: #9ca3af;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #60a5fa;
+        }
+
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            border-radius: 3px;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .skill-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 1.5rem;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .skill-card:hover {
+            background: rgba(255,255,255,0.08);
+            transform: translateY(-4px);
+        }
+
+        .skill-card i {
+            font-size: 2rem;
+            color: #60a5fa;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tags span {
+            background: rgba(96,165,250,0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            color: #60a5fa;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: rgba(255,255,255,0.05);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-image {
+            background: linear-gradient(135deg, #1e293b, #0f172a);
+            padding: 2rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .project-image i {
+            font-size: 3rem;
+            color: #60a5fa;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+
+        .project-info h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: rgba(34,197,94,0.2);
+            color: #22c55e;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .project-tech span {
+            background: rgba(255,255,255,0.1);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+        }
+
+        /* App Gallery */
+        .app-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .app-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 12px;
+            padding: 1rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .app-item:hover {
+            background: rgba(96,165,250,0.1);
+            transform: translateY(-2px);
+        }
+
+        .app-item i {
+            font-size: 1.5rem;
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+
+        .app-item span {
+            font-size: 0.75rem;
+            display: block;
+            color: #9ca3af;
+        }
+
+        .app-item .app-name {
+            font-size: 0.85rem;
+            color: #e5e5e5;
+            font-weight: 500;
+        }
+
+        /* Experience & Education */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            border-left: 2px solid #60a5fa;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 14px;
+            height: 14px;
+            background: #60a5fa;
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-size: 0.85rem;
+            color: #60a5fa;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-subtitle {
+            color: #9ca3af;
+            margin-bottom: 0.75rem;
+        }
+
+        .responsibility-list {
+            list-style: none;
+            margin-top: 0.75rem;
+        }
+
+        .responsibility-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.25rem;
+            position: relative;
+            color: #9ca3af;
+            font-size: 0.9rem;
+        }
+
+        .responsibility-list li:before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #60a5fa;
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-content {
+                flex-direction: column;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container nav-content">
+            <div class="logo">Paraskumar Chaudhari</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#apps">Applications</a></li>
+                <li><a href="#experience">Experience</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Paraskumar Chaudhari</h1>
+                    <div class="title">IT Coordinator & Programmer</div>
+                    <p class="description">IT professional specializing in application development, database management, and business intelligence solutions. Expert in .NET development, SQL optimization, and process automation to streamline business operations.</p>
+                    <div class="info-grid">
+                        <div class="info-item"><i class="fas fa-map-marker-alt"></i> Kingston, ON, Canada</div>
+                        <div class="info-item"><i class="fas fa-envelope"></i> chaudhariparas81@gmail.com</div>
+                        <div class="info-item"><i class="fas fa-phone"></i> 416-879-0981</div>
+                        <div class="info-item"><i class="fas fa-language"></i> English (Full Professional)</div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://instagram.com/paras_067" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a href="mailto:chaudhariparas81@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="hero-text">
+                    <div class="info-item" style="margin-bottom: 1rem;"><i class="fas fa-check-circle"></i> C# & .NET Application Development</div>
+                    <div class="info-item" style="margin-bottom: 1rem;"><i class="fas fa-check-circle"></i> SQL Database Development & Optimization</div>
+                    <div class="info-item" style="margin-bottom: 1rem;"><i class="fas fa-check-circle"></i> Power BI & Business Intelligence</div>
+                    <div class="info-item" style="margin-bottom: 1rem;"><i class="fas fa-check-circle"></i> Process Automation & Power Apps</div>
+                    <div class="info-item" style="margin-bottom: 1rem;"><i class="fas fa-check-circle"></i> Active Directory & Network Infrastructure</div>
+                    <div class="info-item" style="margin-bottom: 1rem;"><i class="fas fa-check-circle"></i> System Integration & Data Visualization</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <div class="container">
+                <h2 class="section-title">Technical Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fas fa-code"></i>
+                        <h3>Application Development</h3>
+                        <p>C#, .NET Framework, Visual Basic, PowerShell, Python</p>
+                        <div class="skill-tags"><span>C#</span><span>.NET</span><span>VB.NET</span><span>Python</span></div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-database"></i>
+                        <h3>Database & BI</h3>
+                        <p>SQL Server, T-SQL, Power BI, Data Visualization, Query Optimization</p>
+                        <div class="skill-tags"><span>SQL Server</span><span>Power BI</span><span>SSMS</span><span>ETL</span></div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Process Automation</h3>
+                        <p>Power Apps, Power Automate, Workflow Optimization, System Integration</p>
+                        <div class="skill-tags"><span>Power Apps</span><span>Automation</span><span>Integration</span></div>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>Infrastructure & Admin</h3>
+                        <p>Active Directory, WatchGuard Firewall, Hyper-V, VMware, M365 Admin</p>
+                        <div class="skill-tags"><span>AD</span><span>Firewall</span><span>Hyper-V</span><span>M365</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="projects">
+            <div class="container">
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image"><i class="fas fa-chalkboard-user"></i></div>
+                        <div class="project-info">
+                            <span class="project-status">Live Production</span>
+                            <h3>In-Plant Posting Application</h3>
+                            <p>Real-time application that displays live job information from on-premise database and allows users to post jobs directly through the interface. Built with Visual Basic .NET and SQL Server.</p>
+                            <div class="project-tech"><span>VB.NET</span><span>SQL Server</span><span>On-Premise DB</span></div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image"><i class="fas fa-chart-line"></i></div>
+                        <div class="project-info">
+                            <span class="project-status">Active</span>
+                            <h3>Trading Bot Algorithm</h3>
+                            <p>Automated trading bot that analyzes market patterns to execute buy/sell orders based on market highs and lows. Built with Python and MySQL for data persistence.</p>
+                            <div class="project-tech"><span>Python</span><span>MySQL</span><span>Pandas</span><span>APIs</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Gallery -->
+        <section id="apps">
+            <div class="container">
+                <h2 class="section-title">Visual Basic Applications Portfolio</h2>
+                <p style="margin-bottom: 1.5rem; color: #9ca3af;">A collection of custom .NET applications built for manufacturing and business operations</p>
+                <div class="app-gallery">
+                    <div class="app-item"><i class="fas fa-chart-line"></i><span class="app-name">Cancoil Production Schedule Automation</span><span>Production Planning</span></div>
+                    <div class="app-item"><i class="fas fa-cubes"></i><span class="app-name">Parts Availability By Job Number</span><span>Inventory</span></div>
+                    <div class="app-item"><i class="fas fa-clipboard-list"></i><span class="app-name">Job and Material Status</span><span>Tracking</span></div>
+                    <div class="app-item"><i class="fas fa-search"></i><span class="app-name">Job Status Lookup</span><span>Search Tool</span></div>
+                    <div class="app-item"><i class="fas fa-box"></i><span class="app-name">Item Lookup Form</span><span>Inventory</span></div>
+                    <div class="app-item"><i class="fas fa-calendar-alt"></i><span class="app-name">Master Production Schedule Template</span><span>Scheduling</span></div>
+                    <div class="app-item"><i class="fas fa-qrcode"></i><span class="app-name">QR Code Label Generator</span><span>Labeling</span></div>
+                    <div class="app-item"><i class="fas fa-industry"></i><span class="app-name">Cancoil Schedule By Work Center</span><span>Work Center</span></div>
+                    <div class="app-item"><i class="fas fa-tags"></i><span class="app-name">Create Labels</span><span>Label Management</span></div>
+                    <div class="app-item"><i class="fas fa-exchange-alt"></i><span class="app-name">Transfer Material Form</span><span>Material Transfer</span></div>
+                    <div class="app-item"><i class="fas fa-weight-hanging"></i><span class="app-name">Material Weight Information</span><span>Weight Tracking</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience -->
+        <section id="experience">
+            <div class="container">
+                <h2 class="section-title">Professional Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">01/2023 - Present</div>
+                        <div class="timeline-title">IT Coordinator & Programmer</div>
+                        <div class="timeline-subtitle">Cancoll Thermal Corporation - Kingston, ON</div>
+                        <ul class="responsibility-list">
+                            <li>Design, develop, and maintain internal applications using C# and .NET framework to support business operations</li>
+                            <li>Support development of business tools and system integrations to streamline cross-departmental workflows</li>
+                            <li>Troubleshoot and resolve application issues, ensuring minimal downtime and optimal system performance</li>
+                            <li>Develop and maintain SQL databases and queries, optimizing database performance and data structures for efficiency</li>
+                            <li>Support data integration between enterprise systems including Stylene ERP and on-premise databases</li>
+                            <li>Assist with development of Power BI dashboards and reports, translating data needs into actionable insights</li>
+                            <li>Support data visualization initiatives across the organization to enable data-driven decision making</li>
+                            <li>Collaborate with stakeholders to understand system requirements and deliver tailored solutions</li>
+                            <li>Support development of Power Apps solutions to automate business processes and improve workflows</li>
+                            <li>Identify opportunities to enhance operational systems and drive continuous improvement initiatives</li>
+                            <li>Work closely with internal departments to gather requirements and support ongoing system enhancements</li>
+                            <li>Participate in testing, debugging, and deployment of new features across IT systems and applications</li>
+                            <li>Manage Active Directory infrastructure, including user accounts, group policies, and access permissions</li>
+                            <li>Administer WatchGuard firewall, MS365 environment, and network infrastructure including routers and switches</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">06/2022 - 12/2022</div>
+                        <div class="timeline-title">Technical Support Specialist</div>
+                        <div class="timeline-subtitle">Xplore Inc - Work From Home</div>
+                        <ul class="responsibility-list">
+                            <li>Delivered advanced technical troubleshooting for internet/network connectivity and email configuration issues</li>
+                            <li>Provided high-quality customer service within service level agreements and quality guidelines</li>
+                            <li>Collaborated with internal departments including Channel Support and Network Operations to resolve complex technical issues</li>
+                            <li>Documented and prioritized trouble tickets, maintaining accurate records of customer technical issues</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">06/2019 - 06/2022</div>
+                        <div class="timeline-title">Customer Service Representative</div>
+                        <div class="timeline-subtitle">Circle K - Kingston, ON</div>
+                        <ul class="responsibility-list">
+                            <li>Managed customer interactions, transactions, and feedback with a professional and empathetic approach</li>
+                            <li>Acknowledged and resolved customer complaints efficiently to ensure satisfaction</li>
+                            <li>Maintained positive customer relationships through clear communication and problem-solving</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">01/2021 - 04/2021</div>
+                        <div class="timeline-title">IT Intern</div>
+                        <div class="timeline-subtitle">St. Lawrence College - Kingston, ON</div>
+                        <ul class="responsibility-list">
+                            <li>Managed and maintained servers, PCs, routers, and switches across the network infrastructure</li>
+                            <li>Configured, managed, and maintained networking equipment for centralized and distributed network connections</li>
+                            <li>Installed and administered network technologies and services</li>
+                            <li>Created and managed WordPress websites using Ubuntu server environment</li>
+                            <li>Developed a Trading BOT script using PowerShell and MySQL for automated trading operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education & Certifications -->
+        <section id="education">
+            <div class="container">
+                <h2 class="section-title">Education & Certifications</h2>
+                <div class="timeline" style="margin-bottom: 2rem;">
+                    <div class="timeline-item">
+                        <div class="timeline-date">2021</div>
+                        <div class="timeline-title">Computer Science</div>
+                        <div class="timeline-subtitle">St. Lawrence College - Kingston, ON</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date">2018</div>
+                        <div class="timeline-title">Bachelor of Engineering: Computer Engineering</div>
+                        <div class="timeline-subtitle">LDRP-ITR College - Gandhinagar, Gujarat</div>
+                    </div>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <i class="fas fa-certificate"></i>
+                        <h3>Certifications</h3>
+                        <div class="skill-tags">
+                            <span>Microsoft Networking Fundamentals</span>
+                            <span>Emerging Trends in ICT</span>
+                            <span>Advanced iOS Development - IEEE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2026 Paraskumar Chaudhari | IT Coordinator & Programmer | Kingston, ON</p>
+            <p style="margin-top: 0.5rem;">Specializing in Application Development, Database Solutions, and Business Intelligence</p>
+        </div>
+    </footer>
+</body>
+</html>
